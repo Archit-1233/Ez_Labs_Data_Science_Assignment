@@ -53,6 +53,8 @@
   <img src="https://github.com/user-attachments/assets/7ee189b0-4800-4760-9ab1-5443a5c9fc8b" alt="Challenge Question 1" width="100%"/>
 </p>
 
+### 📚 Challenge Me: AI Feedback
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d541914b-830a-4434-bd1b-4ece29a427ac" alt="Challenge Question 2" width="100%"/>
 </p>
@@ -61,24 +63,49 @@
   <img src="https://github.com/user-attachments/assets/a0fb6444-5c5c-4bc2-8066-641e6d3e297c" alt="Challenge Question 3" width="100%"/>
 </p>
 
+### 📚 Challenge Me: AI Feedback
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6465e637-ee7f-4aeb-8cda-17cf181af1eb" alt="Challenge Question 4" width="100%"/>
 </p>
 
-### 📚 Challenge Me: AI Feedback
 
-<p align="center">
-  <img src="screenshots/challenge_feedback.png" alt="Challenge Mode Feedback" width="80%"/>
-</p>
 
 ## 🏗️ Architecture Overview
+## 🧠 Architecture Overview
+
+```mermaid
+flowchart TD
+    %% Node styles
+    style Upload fill:#f9f,stroke:#333,stroke-width:2px
+    style OCR fill:#ffdeeb,stroke:#b10062,stroke-width:1.5px
+    style Chunk fill:#ffe5b4,stroke:#a55e00,stroke-width:1.5px
+    style Embed fill:#ffdab9,stroke:#cc6600,stroke-width:1.5px
+    style VectorDB fill:#d0f0c0,stroke:#228b22,stroke-width:1.5px
+    style AskMode fill:#add8e6,stroke:#1d4e89,stroke-width:1.5px
+    style ChallengeMode fill:#add8e6,stroke:#1d4e89,stroke-width:1.5px
+    style Retrieval fill:#ffe5ec,stroke:#a61e4d,stroke-width:1.5px
+    style Gemini fill:#e0f7fa,stroke:#00796b,stroke-width:1.5px
+    style Answer fill:#fef9c3,stroke:#b59f00,stroke-width:1.5px
+    style QAgen fill:#fff8dc,stroke:#ff8c00,stroke-width:1.5px
+    style Eval fill:#fef9c3,stroke:#b59f00,stroke-width:1.5px
+
+    %% Flow
+    Upload["📥 Upload PDF / TXT"] --> OCR["🔍 Text Extraction (Mistral OCR)"]
+    OCR --> Chunk["🧩 Text Chunking"]
+    Chunk --> Embed["📐 Generate Embeddings"]
+    Embed --> VectorDB["🗂️ FAISS Vector Store"]
+
+    VectorDB --> AskMode["💬 Ask Mode"]
+    VectorDB --> ChallengeMode["🧠 Challenge Mode"]
+
+    AskMode --> Retrieval["📥 Retrieve Relevant Chunks"]
+    Retrieval --> Gemini["🔮 Gemini LLM (Answer + Justification)"]
+    Gemini --> Answer["📑 Return Answer & Supporting Paragraphs"]
+
+    ChallengeMode --> Retrieval
+    Retrieval --> QAgen["❓ Generate Logical Questions"]
+    QAgen --> Eval["📚 Evaluate User Answers"]
 
 
 
-    A[Upload PDF/TXT] --> B[Extracted Text]
-    B --> C[Text Chunking]
-    C --> D[FAISS Vector Store]
-    D --> E1[Ask Mode]
-    D --> E2[Challenge Mode]
-    E1 --> F1[Gemini ↔ Answer + Justification]
-    E2 --> F2[Gemini ↔ Questions + Evaluation]
+   
