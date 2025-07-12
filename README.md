@@ -83,3 +83,37 @@ flowchart TD
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6465e637-ee7f-4aeb-8cda-17cf181af1eb" alt="Challenge Question 4" width="100%"/>
 </p>
+
+## 🚀 Getting Started
+## Follow the steps below to run the project locally:
+
+# 1️⃣ Clone the Repository
+git clone https://github.com/Archit-1233/Ez_Labs_Data_Science_Assignment.git
+
+# 2️⃣ Install all dependencies
+pip install -r requirements.txt
+
+# 3️⃣ Launch the Streamlit App
+streamlit run app.py
+
+## 🔐  Environment Variables
+GOOGLE_API_KEY=your_api_key_here
+MISTRAL_API_KEY =your_api_key_here
+
+## 🧠 Final Notes
+This project demonstrates how GenAI can be used to enhance document understanding, combining Mistral OCR, FAISS, Gemini LLM, and an interactive UI.
+Designed with both aesthetics and learning experience in mind, making it useful for researchers, students, and AI enthusiasts.
+Open to suggestions, improvements, and contributions!
+
+## 🙌 Acknowledgements
+🔮 Gemini LLM for generative question-answering
+📚 FAISS for efficient vector similarity search
+🎨 Streamlit for beautiful and reactive UI
+🧠 Mistral OCR for accurate text extraction (custom integration)
+
+## 📬 Connect with Me
+Feel free to reach out if you'd like to collaborate or learn more:
+✉️ Email: agrawalarchit121@gmail.com
+
+
+
