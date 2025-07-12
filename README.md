@@ -9,11 +9,15 @@
   <img src="https://img.shields.io/badge/Built%20with-Streamlit-e74c3c?style=for-the-badge&logo=streamlit" />
 </p>
 
+---
+
 ## 📸 Overview of the App
 
 <p align="center">
   <img width="100%" src="https://github.com/user-attachments/assets/da985324-28c5-4334-b500-e357277cfec7" alt="Overview Screenshot" />
 </p>
+
+---
 
 ## 🎬 Live Demo
 
@@ -25,15 +29,19 @@
 
 > 🔗 Click the image above to watch a 2–3 min walkthrough video hosted on Google Drive.
 
+---
+
 ## ✨ Features
 
-- 📄 **Auto-Summarization**: Instantly generates a ~150-word summary on upload
-- 💬 **Ask Anything**: Ask deep questions with AI-generated answers + highlighted justifications
-- 🧠 **Challenge Me**: Test yourself with logic-based AI questions and get smart feedback
-- 🎨 **Elegant UI**: Animated, gradient-rich, and cleanly styled layout
-- 🔄 **Switch Seamlessly**: Switch modes without losing your session data
+- 📄 **Auto-Summarization**: Instantly generates a ~150-word summary on upload  
+- 💬 **Ask Anything**: Ask deep questions with AI-generated answers + highlighted justifications  
+- 🧠 **Challenge Me**: Test yourself with logic-based AI questions and get smart feedback  
+- 🎨 **Elegant UI**: Animated, gradient-rich, and cleanly styled layout  
+- 🔄 **Switch Seamlessly**: Switch modes without losing your session data  
 
-  ## 🧠 Architecture Overview
+---
+
+## 🧠 Architecture Overview
 
 ```mermaid
 flowchart TD
@@ -67,6 +75,7 @@ flowchart TD
     ChallengeMode --> Retrieval
     Retrieval --> QAgen["❓ Generate Logical Questions"]
     QAgen --> Eval["📚 Evaluate User Answers"]
+--
 
 ## 🖼️ Screenshots
 
@@ -98,7 +107,7 @@ flowchart TD
   <img src="https://github.com/user-attachments/assets/a0fb6444-5c5c-4bc2-8066-641e6d3e297c" alt="Challenge Question 3" width="100%"/>
 </p>
 
-### 📚 Challenge Me: AI Feedback
+## 📚 Challenge Me: AI Feedback
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6465e637-ee7f-4aeb-8cda-17cf181af1eb" alt="Challenge Question 4" width="100%"/>
 </p>
