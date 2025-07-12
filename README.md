@@ -10,6 +10,10 @@
 </p>
 
 ---
+## Overview of the app
+
+<img width="1917" height="965" alt="Screenshot 2025-07-12 142204" src="https://github.com/user-attachments/assets/da985324-28c5-4334-b500-e357277cfec7" />
+
 
 ## 🎬 Live Demo
 
