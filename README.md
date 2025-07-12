@@ -33,6 +33,41 @@
 - 🎨 **Elegant UI**: Animated, gradient-rich, and cleanly styled layout
 - 🔄 **Switch Seamlessly**: Switch modes without losing your session data
 
+  ## 🧠 Architecture Overview
+
+```mermaid
+flowchart TD
+    %% Node styles
+    style Upload fill:#f9f,stroke:#333,stroke-width:2px
+    style OCR fill:#ffdeeb,stroke:#b10062,stroke-width:1.5px
+    style Chunk fill:#ffe5b4,stroke:#a55e00,stroke-width:1.5px
+    style Embed fill:#ffdab9,stroke:#cc6600,stroke-width:1.5px
+    style VectorDB fill:#d0f0c0,stroke:#228b22,stroke-width:1.5px
+    style AskMode fill:#add8e6,stroke:#1d4e89,stroke-width:1.5px
+    style ChallengeMode fill:#add8e6,stroke:#1d4e89,stroke-width:1.5px
+    style Retrieval fill:#ffe5ec,stroke:#a61e4d,stroke-width:1.5px
+    style Gemini fill:#e0f7fa,stroke:#00796b,stroke-width:1.5px
+    style Answer fill:#fef9c3,stroke:#b59f00,stroke-width:1.5px
+    style QAgen fill:#fff8dc,stroke:#ff8c00,stroke-width:1.5px
+    style Eval fill:#fef9c3,stroke:#b59f00,stroke-width:1.5px
+
+    %% Flow
+    Upload["📥 Upload PDF / TXT"] --> OCR["🔍 Text Extraction (Mistral OCR)"]
+    OCR --> Chunk["🧩 Text Chunking"]
+    Chunk --> Embed["📐 Generate Embeddings"]
+    Embed --> VectorDB["🗂️ FAISS Vector Store"]
+
+    VectorDB --> AskMode["💬 Ask Mode"]
+    VectorDB --> ChallengeMode["🧠 Challenge Mode"]
+
+    AskMode --> Retrieval["📥 Retrieve Relevant Chunks"]
+    Retrieval --> Gemini["🔮 Gemini LLM (Answer + Justification)"]
+    Gemini --> Answer["📑 Return Answer & Supporting Paragraphs"]
+
+    ChallengeMode --> Retrieval
+    Retrieval --> QAgen["❓ Generate Logical Questions"]
+    QAgen --> Eval["📚 Evaluate User Answers"]
+
 ## 🖼️ Screenshots
 
 ### 📥 Upload Document + Auto-Summary
@@ -70,41 +105,6 @@
 
 
 
-## 🏗️ Architecture Overview
-## 🧠 Architecture Overview
-
-```mermaid
-flowchart TD
-    %% Node styles
-    style Upload fill:#f9f,stroke:#333,stroke-width:2px
-    style OCR fill:#ffdeeb,stroke:#b10062,stroke-width:1.5px
-    style Chunk fill:#ffe5b4,stroke:#a55e00,stroke-width:1.5px
-    style Embed fill:#ffdab9,stroke:#cc6600,stroke-width:1.5px
-    style VectorDB fill:#d0f0c0,stroke:#228b22,stroke-width:1.5px
-    style AskMode fill:#add8e6,stroke:#1d4e89,stroke-width:1.5px
-    style ChallengeMode fill:#add8e6,stroke:#1d4e89,stroke-width:1.5px
-    style Retrieval fill:#ffe5ec,stroke:#a61e4d,stroke-width:1.5px
-    style Gemini fill:#e0f7fa,stroke:#00796b,stroke-width:1.5px
-    style Answer fill:#fef9c3,stroke:#b59f00,stroke-width:1.5px
-    style QAgen fill:#fff8dc,stroke:#ff8c00,stroke-width:1.5px
-    style Eval fill:#fef9c3,stroke:#b59f00,stroke-width:1.5px
-
-    %% Flow
-    Upload["📥 Upload PDF / TXT"] --> OCR["🔍 Text Extraction (Mistral OCR)"]
-    OCR --> Chunk["🧩 Text Chunking"]
-    Chunk --> Embed["📐 Generate Embeddings"]
-    Embed --> VectorDB["🗂️ FAISS Vector Store"]
-
-    VectorDB --> AskMode["💬 Ask Mode"]
-    VectorDB --> ChallengeMode["🧠 Challenge Mode"]
-
-    AskMode --> Retrieval["📥 Retrieve Relevant Chunks"]
-    Retrieval --> Gemini["🔮 Gemini LLM (Answer + Justification)"]
-    Gemini --> Answer["📑 Return Answer & Supporting Paragraphs"]
-
-    ChallengeMode --> Retrieval
-    Retrieval --> QAgen["❓ Generate Logical Questions"]
-    QAgen --> Eval["📚 Evaluate User Answers"]
 
 
 
