@@ -9,15 +9,11 @@
   <img src="https://img.shields.io/badge/Built%20with-Streamlit-e74c3c?style=for-the-badge&logo=streamlit" />
 </p>
 
----
-
 ## 📸 Overview of the App
 
 <p align="center">
   <img width="100%" src="https://github.com/user-attachments/assets/da985324-28c5-4334-b500-e357277cfec7" alt="Overview Screenshot" />
 </p>
-
----
 
 ## 🎬 Live Demo
 
@@ -29,8 +25,6 @@
 
 > 🔗 Click the image above to watch a 2–3 min walkthrough video hosted on Google Drive.
 
----
-
 ## ✨ Features
 
 - 📄 **Auto-Summarization**: Instantly generates a ~150-word summary on upload  
@@ -39,27 +33,10 @@
 - 🎨 **Elegant UI**: Animated, gradient-rich, and cleanly styled layout  
 - 🔄 **Switch Seamlessly**: Switch modes without losing your session data  
 
----
-
 ## 🧠 Architecture Overview
 
 ```mermaid
 flowchart TD
-    %% Node styles
-    style Upload fill:#f9f,stroke:#333,stroke-width:2px
-    style OCR fill:#ffdeeb,stroke:#b10062,stroke-width:1.5px
-    style Chunk fill:#ffe5b4,stroke:#a55e00,stroke-width:1.5px
-    style Embed fill:#ffdab9,stroke:#cc6600,stroke-width:1.5px
-    style VectorDB fill:#d0f0c0,stroke:#228b22,stroke-width:1.5px
-    style AskMode fill:#add8e6,stroke:#1d4e89,stroke-width:1.5px
-    style ChallengeMode fill:#add8e6,stroke:#1d4e89,stroke-width:1.5px
-    style Retrieval fill:#ffe5ec,stroke:#a61e4d,stroke-width:1.5px
-    style Gemini fill:#e0f7fa,stroke:#00796b,stroke-width:1.5px
-    style Answer fill:#fef9c3,stroke:#b59f00,stroke-width:1.5px
-    style QAgen fill:#fff8dc,stroke:#ff8c00,stroke-width:1.5px
-    style Eval fill:#fef9c3,stroke:#b59f00,stroke-width:1.5px
-
-    %% Flow
     Upload["📥 Upload PDF / TXT"] --> OCR["🔍 Text Extraction (Mistral OCR)"]
     OCR --> Chunk["🧩 Text Chunking"]
     Chunk --> Embed["📐 Generate Embeddings"]
@@ -75,46 +52,34 @@ flowchart TD
     ChallengeMode --> Retrieval
     Retrieval --> QAgen["❓ Generate Logical Questions"]
     QAgen --> Eval["📚 Evaluate User Answers"]
---
+```
 
 ## 🖼️ Screenshots
 
 ### 📥 Upload Document + Auto-Summary
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e4375ec2-d924-4957-83a2-6d4a5b38a357" alt="Upload and Summary View" width="100%"/>
 </p>
 
 ### 💬 Ask Anything with Justified Answer
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/06a18b3a-346f-4108-a197-bd774c2f3750" alt="Ask Anything Mode" width="100%"/>
 </p>
 
 ### 🧠 Challenge Me: Logic-Based Questions
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/7ee189b0-4800-4760-9ab1-5443a5c9fc8b" alt="Challenge Question 1" width="100%"/>
 </p>
 
-### 📚 Challenge Me: AI Feedback
-
+### 🧠 Challenge Me: AI Feedback
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d541914b-830a-4434-bd1b-4ece29a427ac" alt="Challenge Question 2" width="100%"/>
 </p>
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a0fb6444-5c5c-4bc2-8066-641e6d3e297c" alt="Challenge Question 3" width="100%"/>
 </p>
 
-## 📚 Challenge Me: AI Feedback
+### 🧠 Challenge Me: AI Feedback
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6465e637-ee7f-4aeb-8cda-17cf181af1eb" alt="Challenge Question 4" width="100%"/>
 </p>
-
-
-
-
-
-
-   
